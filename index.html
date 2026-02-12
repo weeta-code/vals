@@ -195,7 +195,7 @@
       library_intro: {
         title: "Chapter 1: The Library",
         text: `The scene shifts to a familiar place... a library, second floor. Two people sitting together after school, not studying at all.`,
-        image: "images/library.jpg",  // <-- Add your library photo here
+        image: "images/library.JPG",  // <-- Add your library photo here
         choices: [
           { text: "What were they doing?", next: "library_camera" }
         ]
@@ -204,7 +204,7 @@
       library_camera: {
         title: "The Camera Roll Date",
         text: `For TWO WHOLE HOURS, they just scrolled through a camera roll together. No books. No homework. Just photos and laughs and getting to know each other.<br><br>Best "study session" ever.`,
-        image: "images/library.jpg",
+        image: "images/library.JPG",
         choices: [
           { text: "That sounds really sweet", next: "library_moment" },
           { text: "Two hours?? Of just photos?", next: "library_two_hours" }
@@ -214,7 +214,7 @@
       library_two_hours: {
         title: "Two Whole Hours",
         text: `I know right? Two hours flew by like nothing. When you're with the right person, time just... disappears.`,
-        image: "images/library.jpg",
+        image: "images/library.JPG",
         choices: [
           { text: "Continue the memory...", next: "library_moment" }
         ]
@@ -223,7 +223,7 @@
       library_moment: {
         title: "And Then...",
         text: `And then... well... there was a funny moment. A word was said. A word that maybe shouldn't have been said LOL. <br><br>You know the one.`,
-        image: "images/library.jpg",
+        image: "images/library.JPG",
         choices: [
           { text: "Oh no... THE word?", next: "library_oops" },
           { text: "I don't recall any such thing", next: "library_denial" }
@@ -233,7 +233,7 @@
       library_denial: {
         title: "Selective Memory",
         text: `Nice try. We both know what happened...`,
-        image: "images/library.jpg",
+        image: "images/library.JPG",
         choices: [
           { text: "...fine. THE word.", next: "library_oops" }
         ]
@@ -242,7 +242,7 @@
       library_oops: {
         title: "The Accident",
         text: `It just... slipped out! An accident! A date for the record books for sure. <br><br>But honestly? It just made everything more memorable. More US.`,
-        image: "images/library.jpg",
+        image: "images/library.JPG",
         choices: [
           { text: "What a way to start a love story", next: "transition_to_kiss" }
         ]
@@ -264,7 +264,7 @@
       kiss_intro: {
         title: "Chapter 2: The Movie Night",
         text: `AMC Assembly Row. A Marvel movie was playing. Which one? Honestly... who remembers? Spider-Man? Eternals? Some guy in a cape?<br><br>The movie wasn't the important part.`,
-        image: "images/firstkiss.jpg",  // <-- Add your photo here
+        image: "images/firstkiss.JPG",  // <-- Add your photo here
         choices: [
           { text: "It was definitely Spider-Man", next: "kiss_spiderman" },
           { text: "I think it was Eternals?", next: "kiss_eternals" },
@@ -275,7 +275,7 @@
       kiss_spiderman: {
         title: "Spider-Man?",
         text: `Maybe! No Way Home was around that time... but let's be real, ain't nobody was focused on that movie`,
-        image: "images/firstkiss.jpg",
+        image: "images/firstkiss.JPG",
         choices: [
           { text: "What happened after?", next: "kiss_after" }
         ]
@@ -284,7 +284,7 @@
       kiss_eternals: {
         title: "Eternals?",
         text: `Could've been! That movie was like 3 hours long anyway. Perfect excuse to stay out late...`,
-        image: "images/firstkiss.jpg",
+        image: "images/firstkiss.JPG",
         choices: [
           { text: "What happened after?", next: "kiss_after" }
         ]
@@ -293,7 +293,7 @@
       kiss_after: {
         title: "After the Movie",
         text: `The movie ended. But neither of us wanted to go home. So we stayed out. Late. Just together.`,
-        image: "images/firstkiss.jpg",
+        image: "images/firstkiss.JPG",
         choices: [
           { text: "And then?", next: "kiss_moment" }
         ]
@@ -302,7 +302,7 @@
       kiss_moment: {
         title: "The Moment",
         text: `And then <br><br>Our first kiss.<br><br>December 2021. The start of the rest of our lives.`,
-        image: "images/firstkiss.jpg",
+        image: "images/firstkiss.JPG",
         choices: [
           { text: "Best night ever", next: "transition_to_concert" }
         ]
@@ -410,7 +410,6 @@
       ).join('');
 
       container.innerHTML = `
-        <div class="bow">🎀</div>
         <div class="fade-in ${scene.final ? 'final-scene' : ''}">
           ${imageHtml}
           <h1 class="scene-title">${scene.title}</h1>
