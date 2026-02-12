@@ -28,11 +28,19 @@
       box-shadow: 0 8px 32px rgba(255, 150, 170, 0.3);
       max-width: 600px;
       width: 100%;
-      padding: 48px 40px;
+      padding: 40px;
       position: relative;
+      overflow: hidden;
     }
 
-
+    /* Cute bow decoration */
+    .bow {
+      position: absolute;
+      top: -8px;
+      right: 30px;
+      font-size: 32px;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+    }
 
     .scene-image {
       width: 100%;
@@ -150,15 +158,13 @@
 </head>
 <body>
   <div class="game-container" id="game">
+    <div class="bow">🎀</div>
     <!-- Game content renders here -->
   </div>
 
   <script>
-    // ============================================
-    // CUSTOMIZE THESE! Add your names here
-    // ============================================
-    const YOUR_NAME = "Me";           // Change to your name
-    const HER_NAME = "You";           // Change to her name
+    const YOUR_NAME = "Bictor";          
+    const HER_NAME = "Chloe";       
     
     // ============================================
     // SCENES - Edit the text to personalize!
@@ -166,10 +172,10 @@
     const scenes = {
       start: {
         title: "A Little Adventure...",
-        text: `✨ Psst... ${HER_NAME}, I have something special to show you. A journey through some of our favorite memories...`,
+        text: `Psst... ${HER_NAME}, I have something special to show you. It's a journey through some of your favorite memories...`,
         image: null,
         choices: [
-          { text: "Let's go ✨", next: "library_intro" },
+          { text: "Let's go!!!", next: "library_intro" },
           { text: "What kind of adventure?", next: "adventure_hint" }
         ]
       },
@@ -216,7 +222,7 @@
 
       library_moment: {
         title: "And Then...",
-        text: `And then... well... there was a certain moment. A word was said. A word that maybe shouldn't have been said. 😳<br><br>You know the one.`,
+        text: `And then... well... there was a funny moment. A word was said. A word that maybe shouldn't have been said LOL. <br><br>You know the one.`,
         image: "images/library.jpg",
         choices: [
           { text: "Oh no... THE word?", next: "library_oops" },
@@ -226,7 +232,7 @@
 
       library_denial: {
         title: "Selective Memory",
-        text: `Nice try. We both know what happened. 😂`,
+        text: `Nice try. We both know what happened...`,
         image: "images/library.jpg",
         choices: [
           { text: "...fine. THE word.", next: "library_oops" }
@@ -235,7 +241,7 @@
 
       library_oops: {
         title: "The Accident",
-        text: `It just... slipped out! An accident! The most chaotic first date energy ever. 💀<br><br>But honestly? It just made everything more memorable. More US.`,
+        text: `It just... slipped out! An accident! A date for the record books for sure. <br><br>But honestly? It just made everything more memorable. More US.`,
         image: "images/library.jpg",
         choices: [
           { text: "What a way to start a love story", next: "transition_to_kiss" }
@@ -247,7 +253,7 @@
       // ============================================
       transition_to_kiss: {
         title: "Fast Forward...",
-        text: `The scene shifts... December 2021. A very special night.`,
+        text: `Now let's visit December 2021... a very special night!`,
         image: null,
         choices: [
           { text: "Assembly Row?", next: "kiss_intro" },
@@ -268,7 +274,7 @@
 
       kiss_spiderman: {
         title: "Spider-Man?",
-        text: `Maybe! No Way Home was around that time... but let's be real, we were both too distracted to pay attention. 🕷️`,
+        text: `Maybe! No Way Home was around that time... but let's be real, ain't nobody was focused on that movie`,
         image: "images/firstkiss.jpg",
         choices: [
           { text: "What happened after?", next: "kiss_after" }
@@ -277,7 +283,7 @@
 
       kiss_eternals: {
         title: "Eternals?",
-        text: `Could've been! That movie was like 3 hours long anyway. Perfect excuse to stay out late... 👀`,
+        text: `Could've been! That movie was like 3 hours long anyway. Perfect excuse to stay out late...`,
         image: "images/firstkiss.jpg",
         choices: [
           { text: "What happened after?", next: "kiss_after" }
@@ -286,7 +292,7 @@
 
       kiss_after: {
         title: "After the Movie",
-        text: `The movie ended. But neither of us wanted to go home. So we stayed out. Late. Just... being together.`,
+        text: `The movie ended. But neither of us wanted to go home. So we stayed out. Late. Just together.`,
         image: "images/firstkiss.jpg",
         choices: [
           { text: "And then?", next: "kiss_moment" }
@@ -295,10 +301,9 @@
 
       kiss_moment: {
         title: "The Moment",
-        text: `And then... ❤️<br><br>Our first kiss.<br><br>December 2021. The start of everything.`,
+        text: `And then <br><br>Our first kiss.<br><br>December 2021. The start of the rest of our lives.`,
         image: "images/firstkiss.jpg",
         choices: [
-          { text: "🥺", next: "transition_to_concert" },
           { text: "Best night ever", next: "transition_to_concert" }
         ]
       },
@@ -308,7 +313,7 @@
       // ============================================
       transition_to_concert: {
         title: "Years Later...",
-        text: `One more memory... Summer 2024 🎵`,
+        text: `One more memory! Summer 2024 `,
         image: null,
         choices: [
           { text: "The concert!", next: "concert_intro" }
@@ -317,36 +322,33 @@
 
       concert_intro: {
         title: "Chapter 3: Don't Stare at the Sun",
-        text: `Dominic Fike. The "Don't Stare at the Sun" tour. Summer 2024. We were THERE.`,
-        image: "images/concert.jpg",  // <-- Add your concert photo here
-        choices: [
+        text: `Dominic Fike. The Don't Stare at the Sun tour. Summer 2024. We were THERE.`,
+        image: "images/concert.jpg",  // <-- Add your concert photo here choices: [
           { text: "What a night", next: "concert_babydoll" }
         ]
       },
 
       concert_babydoll: {
         title: "Babydoll",
-        text: `And when "Babydoll" came on? That's our song. That moment, in the crowd, together... perfect.`,
+        text: `And when Babydoll came on? That's our song!`,
         image: "images/concert.jpg",
         choices: [
           { text: "I love that song", next: "concert_why" },
-          { text: "🎵 Babydoll 🎵", next: "concert_why" }
         ]
       },
 
       concert_why: {
         title: "Why",
-        text: `Oh, and "Why" started playing. Phone came out. Recording. Vibing. And then...<br><br>*clap clap clap*<br><br>...right into the video. 😂`,
+        text: `Oh, and Why started playing. Phone came out. Recording. Vibing. And I had to start clapping <br><br> ...right into the video.`,
         image: "images/concert.jpg",
         choices: [
-          { text: "THE CLAPPING 💀", next: "concert_clap" },
-          { text: "Classic moment", next: "concert_clap" }
+          { text: "THE CLAPPING LOLOL", next: "concert_clap" },
         ]
       },
 
       concert_clap: {
         title: "The Clap",
-        text: `That video is forever immortalized with those claps. No regrets. It's funnier this way. 👏<br><br>Every time we hear "Why" now... we think of those claps.`,
+        text: `That video is forever immortalized with those claps. No regrets. It's funnier this way. <br><br>Every time we hear Why now... we think of those claps.`,
         image: "images/concert.jpg",
         choices: [
           { text: "Wouldn't have it any other way", next: "finale_transition" }
@@ -367,11 +369,11 @@
 
       finale: {
         title: "Happy Valentine's Day",
-        text: `From our chaotic library "date" to our first kiss after a Marvel movie we can't remember, to clapping in concert videos...<br><br>Every moment with you is my favorite.<br><br>Here's to all the memories we've made, and all the ones still to come.<br><br>I love you. 💕`,
+        text: `From our chaotic library "date" to our first kiss after a Marvel movie we can't remember, to clapping in concert videos...<br><br>Every moment with you is my favorite.<br><br>Here's to all the memories we've made, and all the ones still to come.<br><br>I love you. `,
         image: "images/us.jpg",  // <-- Add a photo of you two here
         choices: [
-          { text: "I love you too 💕", next: "end" },
-          { text: "Play again from the start", next: "start" }
+          { text: "Yes!!!", next: "end" },
+          { text: "no? (lame)", next: "finale" },
         ],
         final: true
       },
@@ -408,7 +410,7 @@
       ).join('');
 
       container.innerHTML = `
-
+        <div class="bow">🎀</div>
         <div class="fade-in ${scene.final ? 'final-scene' : ''}">
           ${imageHtml}
           <h1 class="scene-title">${scene.title}</h1>
